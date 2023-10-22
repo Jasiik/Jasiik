@@ -1,0 +1,27 @@
+- 👋 Hi, I’m @Jasiik
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+
+<!---
+Jasiik/Jasiik is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
+on:
+  schedule:
+    # every week
+    - cron: 0 0 * * 0
+
+  workflow_dispatch:
+
+jobs:
+  update_animes:
+    runs-on: ubuntu-latest
+    name: Updates README Anime List
+    steps:
+      - uses: actions/checkout@v2
+      - uses: glup3/anilist-animes-action@v1.1.0
+        with:
+          ANILIST_USERNAME: 'glup3'
+          HEADER_TITLE: "Glup3's cool awesome Animes"
